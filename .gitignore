@@ -12,3 +12,9 @@ po/POTFILES.in
 po/*.pot
 easystroke.desktop
 .clang_complete
+description-pak
+doc-pak/
+*.o
+*.Po
+easystroke
+*.deb

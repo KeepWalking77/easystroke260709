@@ -34,6 +34,11 @@ RTriple create_triple(float x, float y, Time t) {
 	update_triple(e, x, y, t);
 	return e;
 }
+#include <boost/archive/text_oarchive.hpp>
+template void Stroke::save<boost::archive::text_oarchive>(
+    boost::archive::text_oarchive&, 
+    const unsigned int
+) const;
 
 template<class Archive> void Stroke::save(Archive & ar, const unsigned int version) const {
 	std::vector<Point> ps;
