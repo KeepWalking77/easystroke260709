@@ -27,64 +27,70 @@ X11 Session
 
 Wayland support is not guaranteed. Easystroke requires X11 features.
 
-Installation
-Install from Debian package
+### Install from Debian Package
 
-Download the latest .deb package from Releases.
+Before installing Easystroke, install the required dependencies:
 
-Example:
-
-sudo apt install ./easystroke_pkg.deb
-
-Dependencies will be installed automatically.
-
-Build From Source
-
-Install required packages:
-
+```bash
 sudo apt update
 
 sudo apt install \
-build-essential \
-git \
-libboost-all-dev \
-libgtk2.0-dev \
-libxtst-dev \
-libx11-dev \
-pkg-config
+    libboost-serialization1.88.0 \
+    libboost-program-options1.88.0 \
+    libboost-filesystem1.88.0 \
+    libboost-system1.88.0 \
+    libgtk2.0-0 \
+    libxtst6
+```
 
-Clone repository:
+Download the latest **.deb** package from the **Releases** page.
 
+Install it with:
+
+```bash
+sudo apt install ./easystroke_20260709_*.deb
+```
+
+
+### Build from Source
+
+Install the required build dependencies:
+
+```bash
+sudo apt update
+
+sudo apt install \
+    build-essential \
+    git \
+    libboost-all-dev \
+    libgtk2.0-dev \
+    libxtst-dev \
+    libx11-dev \
+    pkg-config
+```
+
+Clone the repository:
+
+```bash
 git clone https://github.com/KeepWalking77/easystroke260709.git
 
 cd easystroke260709
+```
 
 Build:
 
+```bash
 make
+```
 
 Install:
 
+```bash
 sudo make install
+```
 
 Run:
 
+```bash
 easystroke
-Create Debian Package
-
-Install packaging tools:
-
-sudo apt install devscripts debhelper
-
-Build:
-
-dpkg-buildpackage -us -uc
-
-Generated package:
-
-../easystroke_*.deb
-Usage
-
-Start Easystroke:
-
-easystroke
+```
